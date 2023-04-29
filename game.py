@@ -1,11 +1,13 @@
 import cv2
 import numpy as np
 import math
+import dlib
 webcam = cv2.VideoCapture(0)
 webcam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 webcam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-
+hog_face_detector = dlib.get_frontal_face_detector()
+dlib_facelandmark = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 class Object:
     def __init__(self, size=50):
         self.logo_org = cv2.imread('zhanat.jpg')
@@ -59,15 +61,35 @@ def collision(rleft, rtop, width, height,   # rectangle definition
 
     return False  # no collision detected
 
+def landmark(frame):
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    faces = hog_face_detector(gray,1)
+    noses_x = []
+    noses_y = []        
+            
+    for face in range(0,len(faces)):
+        faces = hog_face_detector(gray)
+        noses_x = []
+        noses_y = []      
+        face_landmarks = dlib_facelandmark(gray, faces[face])
+        nose_x = face_landmarks.part(30).x
+        nose_y = face_landmarks.part(30).y
+        noses_x.append(nose_x)
+        noses_y.append(nose_y) 
+        rad = 5
+        cv2.circle(frame, (nose_x, nose_y), rad, (0, 255, 255), cv2.FILLED)   
+
 def main():
     print("Hello World!")
     while True:
         _, frame = webcam.read()
         frame = cv2.flip(frame, 1)
-        target_for_player1.insert_object(frame)
-        target_for_player2.insert_object(frame)
-        cv2.imshow('frame', frame)
 
+        #target_for_player1.insert_object(frame)
+        #target_for_player2.insert_object(frame)
+        landmark(frame)
+        cv2.imshow('frame', frame)
+        
         k = cv2.waitKey(1)
         if k == 27: # ASCII code 27 in decimal - ESC
             webcam.release() 
