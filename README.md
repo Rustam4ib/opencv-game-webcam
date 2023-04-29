@@ -10,4 +10,5 @@ Installing opencv may take up to 15 mins
 pip3 install --upgrade pip
 pip3 install opencv-python
 pip3 install dlib
+pip3 install --upgrade imutils
 ```
