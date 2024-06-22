@@ -12,3 +12,4 @@ pip3 install opencv-python
 pip3 install dlib
 pip3 install --upgrade imutils
 ```
+Run result.py
