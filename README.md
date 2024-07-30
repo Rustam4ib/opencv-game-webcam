@@ -4,15 +4,15 @@ This is the final project for the Image Processing course. "CatchWithNose" is a 
 
 ## Overview
 
-The game uses OpenCV to detect and track the nose landmark of each player. The objective is to catch the target image displayed on the screen.
+The game uses OpenCV to detect and track the nose landmark of each player. The objective is to catch the target image displayed on the screen using the nose landmark as the main point for interaction.
+
+The project includes a simple face predictor using a Haar cascade classifier.
 
 ## Implementation
 
 The project utilizes two main techniques:
 1. **Haar Cascades**: Used for face detection. Haar cascades are a machine learning-based approach where a cascade function is trained from lots of positive and negative images.
 2. **Facial Landmarks**: Used for detecting specific points on the face, such as the nose. The `shape_predictor_68_face_landmarks.dat` file contains a pre-trained model for detecting 68 facial landmarks.
-
-Additionally, the project includes a simple face predictor using a Haar cascade classifier.
 
 ## Prerequisites
 
