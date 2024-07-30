@@ -12,6 +12,8 @@ The project utilizes two main techniques:
 1. **Haar Cascades**: Used for face detection. Haar cascades are a machine learning-based approach where a cascade function is trained from lots of positive and negative images.
 2. **Facial Landmarks**: Used for detecting specific points on the face, such as the nose. The `shape_predictor_68_face_landmarks.dat` file contains a pre-trained model for detecting 68 facial landmarks.
 
+Additionally, the project includes a simple face predictor using a Haar cascade classifier.
+
 ## Prerequisites
 
 Installing OpenCV and other dependencies may take up to 15 minutes. Use the following commands to install the necessary packages:
