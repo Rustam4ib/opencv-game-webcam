@@ -1,7 +1,7 @@
 # "CatchWithNose" opencv-game-webcam
 
 ## Overview
-My final project for Image Processing course is a webcam game, where two players should catch the target image with a nose landmark. The one who caught more pictures - winner
+My final project for Image Processing course is a webcam game, where two players should catch the target image with a nose landmark. Winner is the one who caught more pictures.
 ## Installation
 
 Installing opencv may take up to 15 mins
