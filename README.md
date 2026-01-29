@@ -22,3 +22,7 @@ pip3 install --upgrade pip
 pip3 install opencv-python
 pip3 install dlib
 pip3 install --upgrade imutils
+```
+By clicking on the image, it opens the YouTube demo video:
+
+[![Demo video](https://img.youtube.com/vi/J-quXCplDOM/0.jpg)](https://youtu.be/J-quXCplDOM)
